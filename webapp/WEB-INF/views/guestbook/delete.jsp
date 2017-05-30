@@ -15,8 +15,7 @@
 		</c:import>
 		<div id="content">
 			<div id="guestbook" class="delete-form">
-				<form method="post" action="${pageContext.servletContext.contextPath}/guestbook">
-					<input type="hidden" name="a" value="delete" />
+				<form method="post" action="${pageContext.servletContext.contextPath}/guestbook/delete">
 					<input type="hidden" name="no" value="${param.no}" />
 					<label>비밀번호</label>
 					<input type="password" name="password">

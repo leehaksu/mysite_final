@@ -18,8 +18,7 @@
 		<div id="content">
 			<div id="board">
 				<form class="board-form" method="get"
-					action="${pageContext.servletContext.contextPath}/board">
-					<input type="hidden" name="a" value="write">
+					action="${pageContext.servletContext.contextPath}/board/reply">
 					<input type="hidden" name="no" value="${no}">
 					<input type="hidden" name="depth" value="${depth}"> 
 					<table class="tbl-ex">

@@ -18,7 +18,7 @@
 		<c:import url="/WEB-INF/views/include/header.jsp"></c:import>
 		<div id="content">
 			<div id="guestbook">
-				<form action="${pageContext.servletContext.contextPath}/guestbook"
+				<form action="${pageContext.servletContext.contextPath}/guestbook/insert"
 					method="post">
 					<input type="hidden" name="a" value="add">
 					<table>
@@ -46,7 +46,7 @@
 									<td>${vo.name}</td>
 									<td>${vo.date}</td>
 									<td><a
-										href="${pageContext.servletContext.contextPath}/guestbook?a=deleteform&no=${vo.no}">삭제</a></td>
+										href="${pageContext.servletContext.contextPath}/guestbook/delete?no=${vo.no}">삭제</a></td>
 								</tr>
 								<tr>
 									<td colspan="4">${fn:replace(vo.message,newLine,"<br>")}</td>

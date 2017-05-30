@@ -20,13 +20,14 @@
 			<div id="user">
 				<form id="join-form" name="modifyform" method="post"
 					action="${pageContext.servletContext.contextPath}/user/modify">
+					<input type="hidden" name="no" value="${no}"/>
 					<label class="block-label" for="name">이름</label> 
 					<input id="name" name="name" type="text" value=""> 
 					<label class="block-label" for="email">이메일</label> 
 					<label class="block-albe" for="email">${email}</label> 
 					<label class="block-label">패스워드</label> <input name="password" type="password" value="">
 					<c:choose>
-						<c:when test="${gender==female}">
+						<c:when test="${gender=='female'}">
 							<fieldset>
 								<legend>성별</legend>
 								<label>여</label> <input type="radio" name="gender"

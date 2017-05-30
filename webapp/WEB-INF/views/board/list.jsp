@@ -40,20 +40,19 @@
 									<td class="left" style="padding-left:${20*vo.depth }px"><img
 										src="${pageContext.request.contextPath }/assets/images/reply.png">
 										<a
-										href="${pageContext.servletContext.contextPath}/board?a=view&no=${vo.no}&depth=${vo.depth}">${vo.title}</a>
+										href="${pageContext.servletContext.contextPath}/board/view?no=${vo.no}&depth=${vo.depth}">${vo.title}</a>
 								</c:when>
 								<c:otherwise>
 									<td class="left"><a
-										href="${pageContext.servletContext.contextPath}/board?a=view&no=${vo.no}&depth=${vo.depth}">${vo.title}</a>
+										href="${pageContext.servletContext.contextPath}/board/view?no=${vo.no}&depth=${vo.depth}">${vo.title}</a>
 								</c:otherwise>
 							</c:choose>
 							<td>${vo.writer}</td>
 							<td>${vo.hit}</td>
 							<td>${vo.regDate}</td>
 							<td><c:if test="${vo.user_no==authUser.no}">
-									<a
-										href="${pageContext.servletContext.contextPath}/board?a=delete&no=${vo.no}"
-										class="del">삭제</a>
+									<a	href="${pageContext.servletContext.contextPath}/board/delete&no=${vo.no}"
+										class="del"><img src="${pageContext.request.contextPath }/assets/images/recycle.png"></a>
 								</c:if></td>
 						</tr>
 					</c:forEach>
@@ -61,25 +60,23 @@
 				<div class="pager">
 					<ul>
 						<li><a
-							href="${pageContext.servletContext.contextPath}/board?page=${beforeNumber}">◀</a></li>
+							href="${pageContext.servletContext.contextPath}/board/list?page=${beforeNumber}">◀</a></li>
 						<c:forEach begin="${firstNumber}" end="${endNumber}"
 							varStatus="status" var="i" step="1">
 							<c:if test="${fisrtNumber==0 }">
 								<li class="selected"><a
-									href="${pageContext.servletContext.contextPath}/board?page=${i}">${i}</a>
+									href="${pageContext.servletContext.contextPath}/board/list?page=${i}">${i}</a>
 							</c:if>
 							<li class="selected"><a
-								href="${pageContext.servletContext.contextPath}/board?page=${firstNumber+i}">${firstNumber+i}</a>
+								href="${pageContext.servletContext.contextPath}/board/list?page=${firstNumber+i}">${firstNumber+i}</a>
 						</c:forEach>
 						<li><a
-							href="${pageContext.servletContext.contextPath}/board?page=${endNumber+1}">▶</a></li>
+							href="${pageContext.servletContext.contextPath}/board/list?page=${endNumber+1}">▶</a></li>
 
 					</ul>
 				</div>
 				<div class="bottom">
-					<a
-						href="${pageContext.servletContext.contextPath}/board?a=writeForm"
-						id="new-book">글쓰기</a>
+					<a href="${pageContext.servletContext.contextPath}/board/write" id="new-book">글쓰기</a>
 				</div>
 			</div>
 		</div>

@@ -12,7 +12,7 @@
 	select no,name,email,gender from user where no =#{long};
 	]]>
 	</select>
-	<select id="getByEp" resultType="uservo" parameterType="long">
+	<select id="getByEp" resultType="uservo" parameterType="uservo">
 	<![CDATA[
 	select no,name from user where email=#{email} and psswd=password(#{password});
 	]]>
@@ -22,15 +22,15 @@
 	update  user set name =#{name}, 
 	]]>
 	<![CDATA[
-	gender =#{gender},
+	gender =#{gender}
 	]]>
 		<if test="password !=null and password !=''">
 	<![CDATA[
-	psswd=password(#{password}) 
+	,psswd=password(#{password}) 
 	]]>
 		</if>
 	<![CDATA[
-	where no =?;
+	where no =#{no};
 	]]>
 	</update>
 </mapper>

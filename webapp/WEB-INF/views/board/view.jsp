@@ -32,9 +32,9 @@
 					</tr>
 				</table>
 				<div class="bottom">
-					<a href="${pageContext.servletContext.contextPath}/board">글목록</a>
-					<a href="${pageContext.servletContext.contextPath}/board?a=modifyForm&no=${no}">글수정</a>
-					<a href="${pageContext.servletContext.contextPath}/board?a=replyForm&no=${no}&depth=${depth}">답글달기</a>			
+					<a href="${pageContext.servletContext.contextPath}/board/list">글목록</a>
+					<a href="${pageContext.servletContext.contextPath}/board/modify?no=${no}">글수정</a>
+					<a href="${pageContext.servletContext.contextPath}/board/reply?no=${no}&depth=${depth}">답글달기</a>			
 				</div>
 			</div>
 		</div>
